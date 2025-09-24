@@ -81,12 +81,21 @@ body {
   -webkit-text-fill-color: transparent;
   margin-bottom: 16px;
   letter-spacing: -0.02em;
+  word-break: keep-all;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .header p {
   font-size: 1.125rem;
   color: var(--text-secondary);
   font-weight: 500;
+  word-break: keep-all;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* 统计信息 */
@@ -413,6 +422,20 @@ body {
   
   .header h1 {
     font-size: 1.5rem;
+    white-space: normal;
+    word-break: keep-all;
+    line-height: 1.3;
+    overflow: visible;
+    text-overflow: unset;
+  }
+  
+  .header p {
+    font-size: 1rem;
+    white-space: normal;
+    word-break: keep-all;
+    line-height: 1.4;
+    overflow: visible;
+    text-overflow: unset;
   }
   
   .stats {
@@ -479,6 +502,20 @@ body {
 }
 
 @media (max-width: 480px) {
+  .header {
+    padding: 24px 16px;
+  }
+  
+  .header h1 {
+    font-size: 1.25rem;
+    line-height: 1.2;
+  }
+  
+  .header p {
+    font-size: 0.875rem;
+    line-height: 1.3;
+  }
+  
   .stats {
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;
