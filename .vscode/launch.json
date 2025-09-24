@@ -1,0 +1,24 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        
+        
+        {
+            "type": "node-terminal",
+            "request": "launch",
+            "name": "Run F1 (No Debug)",
+            "command": "powershell -NoProfile -Command \"exit 0\"",
+            "preLaunchTask": "run-no-debug"
+        },
+
+        {
+            "type": "chrome",
+            "request": "attach",
+            "name": "Attach to Chrome (9333)",
+            "address": "127.0.0.1",
+            "port": 9333,
+            "webRoot": "${workspaceFolder}",
+            "urlFilter": "http://127.0.0.1:5500/*"
+        }
+    ]
+}
