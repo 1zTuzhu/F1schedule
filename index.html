@@ -14,7 +14,6 @@
 <div class="container">
     <header class="header">
       <h1>F1赛历 2025</h1>
-        <p>全球一级方程式锦标赛完整时间表 | 北京时间（UTC+8）</p>
     </header>
 
     <div class="stats">
@@ -36,17 +35,25 @@
       <button class="filter-btn active" data-filter="all">全部</button>
       <button class="filter-btn" data-filter="upcoming">即将开始</button>
       <button class="filter-btn" data-filter="completed">已完赛</button>
+      <button class="filter-btn" data-filter="streamers">观看直播</button>
     </div>
 
     <div id="raceGrid" class="race-grid">
       <!-- 比赛卡片将在这里动态生成 -->
     </div>
 
-    <div class="current-time" id="currentTime">
-      <div class="current-time-text">当前时间</div>
-      <div class="current-time-value">--:--</div>
+    <div class="copyright" id="copyright">
+      <div class="copyright-text">© 2025 1zTuzhu. All rights reserved.</div>
+      <div class="copyright-details">
+        <span>F1赛历数据来源于官方公开信息</span>
+        <span>•</span>
+        <span>本网站仅供学习和交流使用</span>
+        <span>•</span>
+        <span>如有侵权请联系删除</span>
+      </div>
     </div>
 </div>
+
 
   <script src="assets/js/app.js"></script>
 </body>

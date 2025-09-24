@@ -16,6 +16,34 @@ let raceData = [];
 let currentFilter = 'all';
 let processedRaceData = [];
 
+// 主播数据
+const streamerData = [
+  {
+    name: '热水瓶RSPF1',
+    description: 'F1赛事专业解说',
+    platform: '腾讯直播',
+    url: 'https://live.qq.com/10202119',
+    avatar: '📺',
+    status: 'online'
+  },
+  {
+    name: '灵羽星F1',
+    description: 'F1赛事解说',
+    platform: '腾讯直播',
+    url: 'https://live.qq.com/10182559',
+    avatar: '🏎️',
+    status: 'online'
+  },
+  {
+    name: '马莎F1',
+    description: 'F1赛事解说',
+    platform: '腾讯直播',
+    url: 'https://live.qq.com/10193696',
+    avatar: '🏁',
+    status: 'online'
+  }
+];
+
 // 时区转换/格式化
 function isBST(date) {
   const year = date.getUTCFullYear();
@@ -346,10 +374,36 @@ function createRaceCard(race) {
   </div>`;
 }
 
+function createStreamerCard(streamer) {
+  return `
+    <div class="streamer-card">
+      <div class="streamer-avatar">${streamer.avatar}</div>
+      <h3 class="streamer-name">${streamer.name}</h3>
+      <a href="${streamer.url}" target="_blank" class="watch-btn">观看</a>
+    </div>
+  `;
+}
+
+function renderStreamers() {
+  const root = document.getElementById('raceGrid');
+  root.classList.add('streamers');
+  root.innerHTML = streamerData.map(createStreamerCard).join('');
+}
+
 function renderRaces() {
   const root = document.getElementById('raceGrid');
+  
+  // 如果是主播列表视图
+  if (currentFilter === 'streamers') {
+    renderStreamers();
+    return;
+  }
+  
+  // 移除主播网格类
+  root.classList.remove('streamers');
+  
   let list = processedRaceData;
-  if (currentFilter === 'upcoming') list = list.filter(r => r.status === 'upcoming');
+  if (currentFilter === 'upcoming') list = list.filter(r => r.isNext);
   else if (currentFilter === 'completed') list = list.filter(r => r.status === 'completed');
   else if (currentFilter === 'next') list = list.filter(r => r.isNext);
 
@@ -370,29 +424,11 @@ function updateStats() {
   document.getElementById('upcomingRaces').textContent = upcoming;
 }
 
-function updateCurrentTime() {
-  const now = new Date();
-  const timeString = now.toLocaleTimeString('zh-CN', {
-    timeZone: 'Asia/Shanghai',
-    hour12: false,
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit'
-  });
-  const currentTimeElement = document.getElementById('currentTime');
-  if (currentTimeElement) {
-    const timeValueElement = currentTimeElement.querySelector('.current-time-value');
-    if (timeValueElement) {
-      timeValueElement.textContent = timeString;
-    }
-  }
-}
 
 function initialize() {
   processRaceData();
   renderRaces();
   updateStats();
-  updateCurrentTime();
 }
 
 // 事件监听器
@@ -434,9 +470,6 @@ addEventListener('DOMContentLoaded', () => {
     updateRaceStatus();
   }, 60000);
 
-  // 每秒更新时间
-  setInterval(updateCurrentTime, 1000);
-
   // 筛选按钮事件
   document.querySelector('.filters').addEventListener('click', e => {
     const btn = e.target.closest('.filter-btn');
@@ -459,6 +492,7 @@ addEventListener('DOMContentLoaded', () => {
     // 更新比赛状态
     updateRaceStatus();
   });
+
   
   console.log('F1日历初始化完成');
 });
