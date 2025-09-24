@@ -481,16 +481,25 @@ addEventListener('DOMContentLoaded', () => {
     renderRaces();
   });
 
-  // 点击比赛卡片时更新状态
-  document.getElementById('raceGrid').addEventListener('click', e => {
-    const raceCard = e.target.closest('.race-card');
-    if (!raceCard) return;
-    
-    const round = Number(raceCard.getAttribute('data-round'));
-    console.log(`点击了第${round}轮比赛，更新状态...`);
-    
-    // 更新比赛状态
-    updateRaceStatus();
+
+  // 返回顶部按钮功能
+  const backToTopBtn = document.getElementById('backToTop');
+  
+  // 监听滚动事件
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+      backToTopBtn.classList.add('show');
+    } else {
+      backToTopBtn.classList.remove('show');
+    }
+  });
+  
+  // 点击返回顶部
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   });
 
   
