@@ -803,6 +803,24 @@ body::before {
     padding: 16px;
   }
   
+  /* 移动端背景修复 */
+  .header,
+  .stat-item,
+  .race-card,
+  .streamer-card,
+  .copyright {
+    background: var(--bg-card) !important;
+    backdrop-filter: none;
+  }
+  
+  .header:hover,
+  .stat-item:hover,
+  .race-card:hover,
+  .streamer-card:hover,
+  .copyright:hover {
+    background: var(--bg-card-hover) !important;
+  }
+  
   .header {
     padding: 20px 24px;
     margin-bottom: 24px;
@@ -944,6 +962,24 @@ body::before {
 }
 
 @media (max-width: 480px) {
+  /* 小屏幕背景修复 */
+  .header,
+  .stat-item,
+  .race-card,
+  .streamer-card,
+  .copyright {
+    background: var(--bg-card) !important;
+    backdrop-filter: none;
+  }
+  
+  .header:hover,
+  .stat-item:hover,
+  .race-card:hover,
+  .streamer-card:hover,
+  .copyright:hover {
+    background: var(--bg-card-hover) !important;
+  }
+  
   .header {
     padding: 16px;
   }
