@@ -12,35 +12,37 @@
 </head>
 <body>
 <div class="container">
-    <header class="header">
-      <h1>F1赛历 2025</h1>
-      <p>一级方程式世界锦标赛时间表 | 北京时间（UTC+8）</p>
-    </header>
+    <div class="content-area">
+      <header class="header">
+        <h1>F1赛历 2025</h1>
+        <p>一级方程式世界锦标赛时间表 | 北京时间（UTC+8）</p>
+      </header>
 
-    <div class="stats">
-      <div class="stat-item">
-        <div class="stat-number" id="totalRaces">24</div>
-        <div class="stat-label">总比赛数</div>
+      <div class="stats">
+        <div class="stat-item">
+          <div class="stat-number" id="totalRaces">24</div>
+          <div class="stat-label">总比赛数</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" id="completedRaces">0</div>
+          <div class="stat-label">已完赛</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" id="upcomingRaces">24</div>
+          <div class="stat-label">待进行</div>
+        </div>
       </div>
-      <div class="stat-item">
-        <div class="stat-number" id="completedRaces">0</div>
-        <div class="stat-label">已完赛</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number" id="upcomingRaces">24</div>
-        <div class="stat-label">待进行</div>
-      </div>
-    </div>
 
-    <div class="filters">
-      <button class="filter-btn active" data-filter="all">全部</button>
-      <button class="filter-btn" data-filter="upcoming">即将开始</button>
-      <button class="filter-btn" data-filter="completed">已完赛</button>
-      <button class="filter-btn" data-filter="streamers">观看直播</button>
-    </div>
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">全部</button>
+        <button class="filter-btn" data-filter="upcoming">即将开始</button>
+        <button class="filter-btn" data-filter="completed">已完赛</button>
+        <button class="filter-btn" data-filter="streamers">观看直播</button>
+      </div>
 
-    <div id="raceGrid" class="race-grid">
-      <!-- 比赛卡片将在这里动态生成 -->
+      <div id="raceGrid" class="race-grid">
+        <!-- 比赛卡片将在这里动态生成 -->
+      </div>
     </div>
 
     <div class="copyright" id="copyright">

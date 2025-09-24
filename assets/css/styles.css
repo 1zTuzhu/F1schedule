@@ -52,6 +52,18 @@ body {
   flex-direction: column;
 }
 
+/* 确保内容区域可以正常滚动 */
+.content-area > * {
+  flex-shrink: 0;
+}
+
+/* 内容区域 */
+.content-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 /* 头部设计 */
 .header {
   text-align: center;
@@ -459,6 +471,7 @@ body {
   border-radius: var(--radius-md);
   margin-top: auto;
   box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
 }
 
 .copyright-text {
@@ -564,6 +577,16 @@ body {
     width: 44px;
     height: 44px;
     font-size: 1.125rem;
+  }
+  
+  /* 修复手机端滚动问题 */
+  .container {
+    min-height: 100vh;
+    height: auto;
+  }
+  
+  .content-area {
+    min-height: 0;
   }
   
   .stats {
