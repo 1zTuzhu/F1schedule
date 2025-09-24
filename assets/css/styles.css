@@ -821,6 +821,36 @@ body::before {
     background: var(--bg-card-hover) !important;
   }
   
+  /* 修复移动端点击高亮问题 */
+  * {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* 确保点击时背景不变白 */
+  .race-card:active,
+  .race-header:active,
+  .session-schedule:active,
+  .session-row:active {
+    background: var(--bg-card) !important;
+  }
+  
+  .race-card.next-race:active {
+    background: linear-gradient(135deg, var(--bg-card), rgba(59, 130, 246, 0.1)) !important;
+  }
+  
+  .race-card.completed:active {
+    background: linear-gradient(135deg, var(--bg-card), rgba(225, 6, 0, 0.05)) !important;
+  }
+  
+  .race-card.upcoming:active {
+    background: linear-gradient(135deg, var(--bg-card), rgba(0, 212, 170, 0.05)) !important;
+  }
+  
   .header {
     padding: 20px 24px;
     margin-bottom: 24px;
@@ -978,6 +1008,26 @@ body::before {
   .streamer-card:hover,
   .copyright:hover {
     background: var(--bg-card-hover) !important;
+  }
+  
+  /* 确保小屏幕点击时背景不变白 */
+  .race-card:active,
+  .race-header:active,
+  .session-schedule:active,
+  .session-row:active {
+    background: var(--bg-card) !important;
+  }
+  
+  .race-card.next-race:active {
+    background: linear-gradient(135deg, var(--bg-card), rgba(59, 130, 246, 0.1)) !important;
+  }
+  
+  .race-card.completed:active {
+    background: linear-gradient(135deg, var(--bg-card), rgba(225, 6, 0, 0.05)) !important;
+  }
+  
+  .race-card.upcoming:active {
+    background: linear-gradient(135deg, var(--bg-card), rgba(0, 212, 170, 0.05)) !important;
   }
   
   .header {
