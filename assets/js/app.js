@@ -31,7 +31,7 @@ const streamerData = [
     description: 'F1赛事解说',
     platform: '腾讯直播',
     url: 'https://live.qq.com/10182559',
-    avatar: '🏎️',
+    avatar: '📺',
     status: 'online'
   },
   {
@@ -39,7 +39,7 @@ const streamerData = [
     description: 'F1赛事解说',
     platform: '腾讯直播',
     url: 'https://live.qq.com/10193696',
-    avatar: '🏁',
+    avatar: '📺',
     status: 'online'
   }
 ];
