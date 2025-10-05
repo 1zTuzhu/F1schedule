@@ -1,6 +1,6 @@
 # Vercel部署指南
 
-## 🚀 部署到Vercel (Dev模式)
+## 🚀 部署到Vercel
 
 ### 方法一：通过Vercel CLI
 ```bash
@@ -10,7 +10,7 @@ npm i -g vercel
 # 登录Vercel
 vercel login
 
-# 部署项目 (dev模式)
+# 部署项目
 vercel
 
 # 生产部署
@@ -20,16 +20,16 @@ vercel --prod
 ### 方法二：通过GitHub集成
 1. 将代码推送到GitHub仓库
 2. 在Vercel控制台连接GitHub仓库
-3. 自动部署 (使用dev模式)
+3. 自动部署
 
 ### 方法三：通过Vercel Dashboard
 1. 访问 [vercel.com](https://vercel.com)
 2. 点击 "New Project"
 3. 导入GitHub仓库
 4. 配置构建设置：
-   - **Framework Preset**: Static Site
-   - **Build Command**: 留空 (不需要构建)
-   - **Output Directory**: 留空
+   - **Framework Preset**: Vite
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `dist`
    - **Install Command**: `npm install --legacy-peer-deps`
 
 ## 🔧 配置文件说明
