@@ -1,32 +1,24 @@
 {
-  "version": "0.2.0",
-  "configurations": [
-    {
-      "name": "Launch Vue App",
-      "type": "node",
-      "request": "launch",
-      "program": "${workspaceFolder}/node_modules/vite/bin/vite.js",
-      "args": [],
-      "console": "integratedTerminal",
-      "internalConsoleOptions": "neverOpen",
-      "skipFiles": ["<node_internals>/**"],
-      "env": {
-        "NODE_ENV": "development"
-      }
-    },
-    {
-      "name": "Run without debug",
-      "type": "node",
-      "request": "launch",
-      "program": "${workspaceFolder}/node_modules/vite/bin/vite.js",
-      "args": [],
-      "console": "integratedTerminal",
-      "internalConsoleOptions": "neverOpen",
-      "skipFiles": ["<node_internals>/**"],
-      "noDebug": true,
-      "env": {
-        "NODE_ENV": "development"
-      }
-    }
-  ]
+    "version": "0.2.0",
+    "configurations": [
+        
+        
+        {
+            "type": "node-terminal",
+            "request": "launch",
+            "name": "Run F1 (No Debug)",
+            "command": "powershell -NoProfile -Command \"exit 0\"",
+            "preLaunchTask": "run-no-debug"
+        },
+
+        {
+            "type": "chrome",
+            "request": "attach",
+            "name": "Attach to Chrome (9333)",
+            "address": "127.0.0.1",
+            "port": 9333,
+            "webRoot": "${workspaceFolder}",
+            "urlFilter": "http://127.0.0.1:5500/*"
+        }
+    ]
 }
