@@ -5,20 +5,8 @@ export default defineConfig({
   plugins: [vue()],
   server: {
     port: 3000,
-    open: true
-  },
-  build: {
-    outDir: 'dist',
-    assetsDir: 'assets',
-    sourcemap: false,
-    minify: 'esbuild',
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ['vue']
-        }
-      }
-    }
+    open: true,
+    host: true
   },
   base: './'
 })
