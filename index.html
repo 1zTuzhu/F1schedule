@@ -8,60 +8,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-<div class="container">
-    <div class="content-area">
-      <header class="header">
-        <h1>F1赛程时间表</h1>
-        <p>2025赛季 | 北京时间</p>
-      </header>
-
-      <div class="stats">
-        <div class="stat-item">
-          <div class="stat-number" id="totalRaces">24</div>
-          <div class="stat-label">总比赛数</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number" id="completedRaces">0</div>
-          <div class="stat-label">已完赛</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number" id="upcomingRaces">24</div>
-          <div class="stat-label">待进行</div>
-        </div>
-      </div>
-
-      <div class="filters">
-        <button class="filter-btn active" data-filter="all">全部比赛</button>
-        <button class="filter-btn" data-filter="upcoming">即将开始</button>
-        <button class="filter-btn" data-filter="completed">已经完赛</button>
-        <button class="filter-btn" data-filter="streamers">观看直播</button>
-      </div>
-
-      <div id="raceGrid" class="race-grid">
-        <!-- 比赛卡片将在这里动态生成 -->
-      </div>
-    </div>
-
-    <div class="copyright" id="copyright">
-      <div class="copyright-text">© 2025 1zTuzhu. All rights reserved.</div>
-      <div class="copyright-details">
-        <span>F1赛历数据来源于官方公开信息</span>
-        <span>•</span>
-        <span>本网站仅供学习和交流使用</span>
-        <span>•</span>
-        <span>如有侵权请联系删除</span>
-      </div>
-    </div>
-</div>
-
-<!-- 返回顶部按钮 -->
-<button class="back-to-top" id="backToTop" title="返回顶部">
-  <span class="back-to-top-icon">↑</span>
-</button>
-
-  <script src="assets/js/app.js"></script>
+  <div id="app"></div>
+  <script type="module" src="/src/main.js"></script>
 </body>
 </html>
