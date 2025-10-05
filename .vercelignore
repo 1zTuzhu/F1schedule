@@ -1,0 +1,15 @@
+src/
+node_modules/
+*.md
+.git/
+.gitignore
+vite.config.js
+package.json
+package-lock.json
+.npmrc
+dist/
+start-dev.bat
+start-preview.bat
+QUICK_START.md
+DEPLOYMENT.md
+VERCEL_DEPLOY.md
